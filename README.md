@@ -1,1 +1,1 @@
-# How-To-Setup
+# Setup
