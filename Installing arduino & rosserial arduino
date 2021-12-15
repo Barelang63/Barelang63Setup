@@ -1,0 +1,31 @@
+# how to install arduino on ubuntu 18.04
+alternatif 1 : https://www.youtube.com/watch?v=kRE-tCk8mGQ
+alternatif 2 : mengambil instalan dari hardisk barelang 63 dengan versi 1.8.13 
+cd ~/Downloads/arduino-1.8.13-linux64/arduino-1.8.13
+sudo chmod +x install.sh
+./ install.sh 
+
+# how to make ros serial arduino
+Anda dapat menginstal rosserial untuk Arduino dengan menjalankan:
+sudo apt-get install ros-melodic-rosserial-arduino
+sudo apt-get install ros-melodic-rosserial
+
+# Instal ros_lib ke Lingkungan Arduino
+cd <sketchbook> / libraries
+# biasanya 
+cd Arduino /libraries
+rm -rf ros_lib
+rosrun rosserial_arduino make_libraries.py
+# kemudian check library ros_lib dengan membuka 
+# software arduino >> examples >> temukan ros_lib
+
+# jika ada maka menginstall rosserial selesai....
+
+# untuk menjalankan rosserial arduino 
+# upload & compile program dari example >> ros_lib >> hello world
+# permission denide serial port
+# sudo chmod a+rw /dev/ttyACM0 (ACM0 sesuai port yang masuk)
+# untuk mengecek serial port yang masuk cek di terminal ls /dev
+roscore
+sudo chmod a+rw /dev/ttyACM0
+rosrun rosserial_python serial_node.py /dev/ttyUSB0
