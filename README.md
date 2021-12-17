@@ -32,7 +32,7 @@ sudo apt-y upgrade
 ## Install OpenCV 3.4.4
 Link : [Install OpenCV 3.4.4 on Ubuntu 18.04](https://learnopencv.com/install-opencv-3-4-4-on-ubuntu-18-04/)
 
-Paste All the Code on Textbox to Terminal
+Paste All the Code from Step 1 to Terminal
 Do it until Step 5
 
 In the Last Step 5, Before do `make -j4`, Check first your Core Processor with typing `nproc` in Terminal.
@@ -62,7 +62,9 @@ sudo dpkg -i filename.deb
 * If the "Result = Pass" it means Install cuDNN is Success.
 
 ## Install ROS Melodic 
-Open Terminal then copy the Code below to Terminal
+Link : [ROS Melodic Ubuntu 18.04](http://wiki.ros.org/melodic/Installation/Ubuntu)
+
+Or You can Copy the Code below and paste to The Terminal
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt install curl # if you haven't already installed curl
@@ -80,10 +82,46 @@ rosdep update
 
 ## Install Arduino
 Link : https://www.youtube.com/watch?v=kRE-tCk8mGQ
+
 Alternative : The File needed for Installing Arduino already Downloaded in our Hardrive,
 How to Install with already Downlaoded File
 ```
 cd ~/Downloads/arduino-1.8.13-linux64/arduino-1.8.13
 sudo chmod +x install.sh
 ./ install.sh 
+```
+
+### How to run Arduino with ROS Serial
+Paste this on Terminal
+```
+sudo apt-get install ros-melodic-rosserial-arduino
+sudo apt-get install ros-melodic-rosserial
+```
+
+### Installing ros_lib to Arduino
+Paste this on Terminal
+```
+cd Arduino /libraries
+rm -rf ros_lib
+rosrun rosserial_arduino make_libraries.py .
+```
+After Complete, Open Arduino go to examples then find the "ros_lib", if "ros_lib" exist, we've finished installing ROS on Arduino
+
+### Fixed Permission for Arduino Serial Port
+Paste this on Terminal
+```
+sudo usermod -a -G dialout ** (refers to pc username)
+sudo chmod a+rw /dev/tty** (refers to the Arduino Port
+```
+Reboot
+
+### How to Check Serial Port
+Paste this on Terminal `ls/dev` 
+Check which port is readed Usually ttyACM / ttyUSB
+
+### How to Run Ros Serial
+Paste this on Terminal
+```
+roscore (Need to Run ROS Environment)
+rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ```
