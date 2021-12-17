@@ -61,7 +61,7 @@ sudo dpkg -i filename.deb
 * Type `Sudo make` then type `./deviceQuery`
 * If the "Result = Pass" it means Install cuDNN is Success.
 
-## Install ROS Melodic 
+## Install ROS 
 Link : [ROS Melodic Ubuntu 18.04](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 Or You can Copy the Code below and paste to The Terminal
