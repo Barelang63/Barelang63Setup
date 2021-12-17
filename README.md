@@ -35,6 +35,13 @@ Link : [Install OpenCV 3.4.4 on Ubuntu 18.04](https://learnopencv.com/install-op
 Paste All the Code from Step 1 to Terminal
 Do it until Step 5
 
+In Step 3 You Will get Error While Paste this on Terminal `sudo apt -y install python3-dev python3-pip python3-vev`
+
+Paste with this Instead
+```
+sudo apt -y install python3-dev python3-pip python3-venv
+```
+
 In the Last Step 5, Before do `make -j4`, Check first your Core Processor with typing `nproc` in Terminal.
 
 The Numbers that Come Out will be your Core Processor, Use `make -j4` that 4 changes to your Core Processor to Faster Process.
@@ -64,31 +71,44 @@ sudo dpkg -i filename.deb
 ## Install ROS 
 Link : [ROS Melodic Ubuntu 18.04](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
-Or You can Copy the Code below and paste to The Terminal
+Or You can Paste this Code below to Terminal
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
 sudo apt install curl # if you haven't already installed curl
+
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
 sudo apt update
+
 sudo apt install ros-melodic-desktop-full
+
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+
 source ~/.bashrc
+
 source /opt/ros/melodic/setup.bash
+
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+
 sudo apt install python-rosdep
+
 sudo rosdep init
+
 rosdep update
 ```
 
 ## Install Arduino
-Link : https://www.youtube.com/watch?v=kRE-tCk8mGQ
+
+Link : [Installing Arduino IDE on Ubuntu 18.04](https://www.youtube.com/watch?v=kRE-tCk8mGQ)
 
 Alternative : The File needed for Installing Arduino already Downloaded in our Hardrive,
+
 How to Install with already Downlaoded File
 ```
 cd ~/Downloads/arduino-1.8.13-linux64/arduino-1.8.13
 sudo chmod +x install.sh
-./ install.sh 
+./install.sh 
 ```
 
 ### How to run Arduino with ROS Serial
