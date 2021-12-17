@@ -77,3 +77,13 @@ sudo apt install python-rosdep
 sudo rosdep init
 rosdep update
 ```
+
+## Install Arduino
+Link : https://www.youtube.com/watch?v=kRE-tCk8mGQ
+Alternative : The File needed for Installing Arduino already Downloaded in our Hardrive,
+How to Install with already Downlaoded File
+```
+cd ~/Downloads/arduino-1.8.13-linux64/arduino-1.8.13
+sudo chmod +x install.sh
+./ install.sh 
+```
