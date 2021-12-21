@@ -8,10 +8,12 @@
 ## How to Install Ubuntu 18.04 
 1. Choose US Language
 2. Don't Connect to Network
-3. Choose Minimal Installation and Check the Third Party Checkbox
-4. Choose Erase Disk and Install Ubuntu (Different Device > Different Allocation Disk)
-5. Set Time to Jakarta
-6. Set Username and Password (Depend on User)
+3. Choose Normal Installation and Check the Third Party Checkbox
+4. Choose Erase Disk and Install Ubuntu or Something Else (Different Device > Different Allocation Disk)
+* For Disk Allocation, Create 1 Partition , choose primay use Ext4 journaling file system and Choose Root ( / )
+* Choose the Partition that created before as a boot Option
+6. Set Time to Jakarta
+7. Set Username and Password (Depend on User)
 
 
 # Setup Ubuntu 18.04
