@@ -22,8 +22,8 @@
 2. Open Terminal
 Press Ctrl + Alt + T at one Time
 ```
-sudo apt-y update
-sudo apt-y upgrade
+sudo apt update
+sudo apt upgrade
 ```
 3. Open Software & Updates
 4. Choose Additional & Updates
