@@ -73,7 +73,11 @@ sudo dpkg -i filename.deb
 ## Install ROS 
 Link : [ROS Melodic Ubuntu 18.04](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
-Or You can Paste this Code below to Terminal
+Or You can Paste this Code below to Terminal 
+
+( To Paste the Line in terminal use ctrl + shift + v )
+
+( If there is a prompt to y / n, press y or press enter instead )
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
