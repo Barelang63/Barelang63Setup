@@ -104,6 +104,10 @@ sudo rosdep init
 rosdep update
 ```
 
+Create ROS Workspace [How to Create ROS Workspace](https://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+
+Create ROS Package [How to Create ROS Package](https://wiki.ros.org/ROS/Tutorials/CreatingPackage)
+
 ## Install Arduino
 
 Link : [Installing Arduino IDE on Ubuntu 18.04](https://www.youtube.com/watch?v=kRE-tCk8mGQ)
