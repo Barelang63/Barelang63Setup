@@ -155,3 +155,18 @@ Paste this on Terminal
 roscore (Need to Run ROS Environment)
 rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ```
+
+### How to setup / Running Robot Striker
+```
+roscore (Need to run ROS Environment)
+```
+run serial arduino & arm 
+note: before running the serial make sure the stm and arduino device ports are connected
+```
+./arm_serial.sh (for rosserial stm32)
+./arduino_serial.sh (for rosserial arduino)
+rosrun barelang63 strategy ( run the strategy program )
+rosrun barelang63 stream (run the vision program)
+rosrun barelang terima1.py (run the vision program)
+rosrun barelang basestation (run the basestation program)
+```
