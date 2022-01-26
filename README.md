@@ -6,52 +6,96 @@
 * Turn On Turbo Mode
 
 ## How to Install Ubuntu 18.04 
-1. Choose US Language
-2. Don't Connect to Network
-3. Choose Normal Installation and Check the Third Party Checkbox
-4. Choose Erase Disk and Install Ubuntu or Something Else (Different Device > Different Allocation Disk)
+* Choose US Language
+* Don't Connect to Network
+* Choose Normal Installation and Check the Third Party Checkbox
+* Choose Erase Disk and Install Ubuntu or Something Else (Different Device > Different Allocation Disk)
 * For Disk Allocation, Create 1 Partition , choose primay use Ext4 journaling file system and Choose Root ( / )
 * Choose the Partition that created before as a boot Option
 6. Set Time to Jakarta
-7. Set Username and Password (Depend on User)
+* Set Username and Password (Depend on User)
 
 
 # Setup Ubuntu 18.04
 ## First Setup after Reboot
-1. Install Chrome Browser (Optional)
-2. Open Terminal
+* Install Chrome Browser (Optional)
+* Open Terminal
 Press Ctrl + Alt + T at one Time
 ```
 sudo apt update
 sudo apt upgrade
 ```
-3. Open Software & Updates
-4. Choose Additional & Updates
-5. Choose Nvidia-driver-460-server (Zotac) then Apply Changes
-6. Reboot
-7. Make Sure in Setting > Details, The VGA Hardware is Shown
+* Open Software & Updates
+* Choose Additional & Updates
+* Choose Nvidia-driver-460-server (Zotac) then Apply Changes
+* Reboot
+* Make Sure in Setting > Details, The VGA Hardware is Shown
+
+## Setup Monitoring with VNC
+### Ubuntu
+### Install Dconf Editor
+* Put This on Terminal 
+```sudo apt install -y dconf-editor```
+* Open Activities Overview / Press Windows Button Instead, then Type Dconf Editor
+* After Dconf Editor open, navigate to org -> gnome -> desktop -> remote-access, 
+* Uncheck the Value of required Encryption
+
+### Enabling Desktop Sharing
+* Open Activites Overview / Press Windows Button Instead, then Type Desktop Sharing
+* Enable Sharing
+* Allow other users to control your desktop
+* Disable You must confirm each access to this machine
+* Enable require the user to enter this password, to secure login access
+* Fill Password with Everything you Can Remember, Example : 1
+
+### Install XServer
+* Put This On Terminal
+```
+sudo apt-get install xserver-xorg-core
+sudo apt-get install xserver-xorg-video-dummy
+sudo apt-get install --reinstall xserver-xorg-input-all
+sudo nano /usr/share/X11/xorg.conf.d/xorg.conf
+``` 
+* Paste this 
+```
+Section "Screen"
+	Identifier "Default Screen"
+	Device "Default Device"
+	Monitor "Configured Monitor"
+	Option "ConnectedMonitor" "HDMI-0"
+	SubSection "Display"
+		Depth 24
+		Virtual 1024 768
+	EndSubSection
+EndSection
+```
+* Reboot
+
+### On Windows
+* Download and Install [VNC Client](https://www.realvnc.com/en/connect/download/viewer/windows)
+* Run VNC Viewer
+* Go to File -> New Connection
+* Fill VNC Server with Destination Ip Address, Exmple 192.168.0.101 (Robot 1 IP)
+* Fill Name with Name you want to Fill
+* If a Password is Required, Fill password that has been Created in Ubuntu Desktop Sharing
 
 ## Install OpenCV 3.4.4
 Link : [Install OpenCV 3.4.4 on Ubuntu 18.04](https://learnopencv.com/install-opencv-3-4-4-on-ubuntu-18-04/)
 
-Paste All the Code from Step 1 to Terminal
-Do it until Step 5
-
-In Step 3 You Will get Error While Paste this on Terminal `sudo apt -y install python3-dev python3-pip python3-vev`
-
-Paste with this Instead
+* Paste All the Code from Step 1 to Terminal
+* Do it until Step 5
+* In Step 3 You Will get Error While Paste this on Terminal `sudo apt -y install python3-dev python3-pip python3-vev`
+* Paste with this Instead
 ```
 sudo apt -y install python3-dev python3-pip python3-venv
 ```
-
-In the Last Step 5, Before do `make -j4`, Check first your Core Processor with typing `nproc` in Terminal.
-
-The Numbers that Come Out will be your Core Processor, Use `make -j4` that 4 changes to your Core Processor to Faster Process.
+* In the Last Step 5, Before do `make -j4`, Check first your Core Processor with typing `nproc` in Terminal.
+* The Numbers that Come Out will be your Core Processor, Use `make -j4` that 4 changes to your Core Processor to Faster Process.
 
 ## Install Cuda
 Link : [Cuda Toolkit 10.2 Download](https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
-Follow the Instru
+Follow the Instruction
 
 ## Install Cudnn
 The File needed for Installing Cudnn already Downloaded in our Hardrive, 
@@ -121,15 +165,15 @@ How to Install with Downloaded File from Web
 * Right Click on the Tar File, Choose Extract Here
 * Open the Folder until You See `install.sh` File
 * Open Folder in Terminal
-```
+``` 
 sudo chmod +x install.sh
 ./install.sh
 ```
-* After Done, Check Your Arduino Software or Check in File Explorer then See Arduino Folder
+* After Done, Open Arduino Software
 
 Alternative : The File needed for Installing Arduino already Downloaded in our Hardrive,
 
-How to Install with already Downlaoded File
+* How to Install with already Downlaoded File
 ```
 cd ~/Downloads/arduino-1.8.13-linux64/arduino-1.8.13
 sudo chmod +x install.sh
@@ -144,15 +188,16 @@ sudo apt-get install ros-melodic-rosserial
 ```
 
 ### Installing ros_lib to Arduino
-Paste this on Terminal
+* Paste this on Terminal
+(If Arduino Folder is Missing, Open Arduino Software First)
+
 ```
 cd ~/Arduino /libraries
 rm -rf ros_lib
 rosrun rosserial_arduino make_libraries.py .
 ```
-Read Properly for Every Line 
-
-After Complete, Open Arduino go to examples then find the "ros_lib", if "ros_lib" exist, we've finished installing ROS on Arduino
+* Read Properly for Every Line 
+* After Complete, Open Arduino go to examples then find the "ros_lib", if "ros_lib" exist, we've finished installing ROS on Arduino
 
 ### Fixed Permission for Arduino Serial Port
 Paste this on Terminal
@@ -163,8 +208,8 @@ sudo chmod a+rw /dev/tty** (refers to the Arduino Port
 Reboot
 
 ### How to Check Serial Port
-Paste this on Terminal `ls/dev` 
-Check which port is readed Usually ttyACM / ttyUSB
+* Paste this on Terminal `ls/dev` 
+* Check which port is readed Usually ttyACM / ttyUSB
 
 ### How to Run Ros Serial
 Paste this on Terminal
