@@ -51,6 +51,8 @@ The Numbers that Come Out will be your Core Processor, Use `make -j4` that 4 cha
 ## Install Cuda
 Link : [Cuda Toolkit 10.2 Download](https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
+Follow the Instru
+
 ## Install Cudnn
 The File needed for Installing Cudnn already Downloaded in our Hardrive, 
 
@@ -112,6 +114,19 @@ Create ROS Package [How to Create ROS Package](https://wiki.ros.org/ROS/Tutorial
 
 Link : [Installing Arduino IDE on Ubuntu 18.04](https://www.youtube.com/watch?v=kRE-tCk8mGQ)
 
+Direct Download : [Arduino Download](https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz)
+
+How to Install with Downloaded File from Web
+* Go to Folder where the File Downloaded
+* Right Click on the Tar File, Choose Extract Here
+* Open the Folder until You See `install.sh` File
+* Open Folder in Terminal
+```
+sudo chmod +x install.sh
+./install.sh
+```
+* After Done, Check Your Arduino Software or Check in File Explorer then See Arduino Folder
+
 Alternative : The File needed for Installing Arduino already Downloaded in our Hardrive,
 
 How to Install with already Downlaoded File
@@ -131,10 +146,12 @@ sudo apt-get install ros-melodic-rosserial
 ### Installing ros_lib to Arduino
 Paste this on Terminal
 ```
-cd Arduino /libraries
+cd ~/Arduino /libraries
 rm -rf ros_lib
 rosrun rosserial_arduino make_libraries.py .
 ```
+Read Properly for Every Line 
+
 After Complete, Open Arduino go to examples then find the "ros_lib", if "ros_lib" exist, we've finished installing ROS on Arduino
 
 ### Fixed Permission for Arduino Serial Port
