@@ -84,7 +84,7 @@ Link : [Install OpenCV 3.4.4 on Ubuntu 18.04](https://learnopencv.com/install-op
 
 * Paste All the Code from Step 1 to Terminal
 * Do it until Step 5
-* In Step 3 You Will get Error While Paste this on Terminal `sudo apt -y install python3-dev python3-pip python3-vev`
+* In Step 3 You Will get Error While Paste this on Terminal `sudo apt -y install python3-dev python3-pip python3-venv`
 * Paste with this Instead
 ```
 sudo apt -y install python3-dev python3-pip python3-venv
