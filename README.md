@@ -194,7 +194,11 @@ sudo apt-get install ros-melodic-rosserial
 ```
 cd ~/Arduino /libraries
 rm -rf ros_lib
-rosrun rosserial_arduino make_libraries.py .
+rosrun rosserial_arduino make_libraries.py . 
+```
+* if you want to include custom msg from the package
+```
+rosrun rosserial_arduino make_libraries.py . Name of Package
 ```
 * Read Properly for Every Line 
 * After Complete, Open Arduino go to examples then find the "ros_lib", if "ros_lib" exist, we've finished installing ROS on Arduino
